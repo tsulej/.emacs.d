@@ -6,15 +6,23 @@
 (require 'clj-refactor)
 
 (defun my-clojure-mode-hook ()
-    (clj-refactor-mode 1)
-    ;; This choice of keybinding leaves cider-macroexpand-1 unbound
-    (cljr-add-keybindings-with-prefix "C-c C-m"))
+  (clj-refactor-mode 1)
+  ;; This choice of keybinding leaves cider-macroexpand-1 unbound
+  (cljr-add-keybindings-with-prefix "C-c C-m"))
 
-(add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
-(add-hook 'clojure-mode-hook 'enable-paredit-mode)
-(add-hook 'clojure-mode-hook #'subword-mode)
+(require 'smartparens)
+(require 'smartparens-config)
+
+(defun my-sp-mode-hook ()
+  (smartparens-strict-mode)
+  (sp-use-paredit-bindings))
+
+(add-hook 'clojure-mode-hook 'my-clojure-mode-hook)
+(add-hook 'clojure-mode-hook 'subword-mode)
 (add-hook 'clojure-mode-hook 'eldoc-mode)
 (add-hook 'clojure-mode-hook 'hs-minor-mode)
+(add-hook 'clojure-mode-hook 'my-sp-mode-hook)
+(add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
 ;; A little more syntax highlighting
 (require 'clojure-mode-extra-font-locking)
@@ -51,9 +59,6 @@
 ;; Wrap when navigating history.
 (setq cider-repl-wrap-history t)
 
-;; enable paredit in your REPL
-(add-hook 'cider-repl-mode-hook #'paredit-mode)
-
 ;; Use clojure mode for other extensions
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
@@ -85,5 +90,3 @@
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
      (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
-
-(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
