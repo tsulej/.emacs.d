@@ -10,18 +10,13 @@
   ;; This choice of keybinding leaves cider-macroexpand-1 unbound
   (cljr-add-keybindings-with-prefix "C-c C-m"))
 
-(require 'smartparens)
-(require 'smartparens-config)
-
-(defun my-sp-mode-hook ()
-  (smartparens-strict-mode)
-  (sp-use-paredit-bindings))
+(require 'paredit)
 
 (add-hook 'clojure-mode-hook 'my-clojure-mode-hook)
 (add-hook 'clojure-mode-hook 'subword-mode)
 (add-hook 'clojure-mode-hook 'eldoc-mode)
 (add-hook 'clojure-mode-hook 'hs-minor-mode)
-(add-hook 'clojure-mode-hook 'my-sp-mode-hook)
+(add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
 ;; A little more syntax highlighting

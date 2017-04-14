@@ -21,7 +21,7 @@
     cider
     cider-eval-sexp-fu
     clj-refactor
-    smartparens
+    paredit
     projectile
     rainbow-mode
     rainbow-delimiters
@@ -129,7 +129,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (smartparens aggressive-indent magithub project-explorer undo-tree minimap flx-ido move-text expand-region markdown-mode clj-refactor sayid which-key smex rainbow-mode rainbow-delimiters projectile php-mode magit ido-ubiquitous hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
+    (slack smartparens aggressive-indent magithub project-explorer undo-tree minimap flx-ido move-text expand-region markdown-mode clj-refactor sayid which-key smex rainbow-mode rainbow-delimiters projectile php-mode magit ido-ubiquitous hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
