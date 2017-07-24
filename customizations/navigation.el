@@ -18,7 +18,7 @@
 
 ;; This enables ido in all contexts where it could be useful, not just
 ;; for selecting buffer and file names
-(require 'ido-ubiquitous)
+(require 'ido-completing-read+)
 (ido-ubiquitous-mode 1)
 
 ;; Enhances M-x to allow easier execution of commands. Provides

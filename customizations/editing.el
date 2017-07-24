@@ -37,6 +37,7 @@
 
 ;(setq electric-indent-mode nil)
 
+(require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
 (with-eval-after-load 'company

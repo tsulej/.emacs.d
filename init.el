@@ -36,6 +36,7 @@
     eldoc-extension
     eldoc-eval
     expand-region
+    ido-completing-read+
     company-flx
     flx-ido
     clojars
@@ -44,6 +45,7 @@
     project-explorer
     minimap
     clojure-snippets
+    haskell-snippets
     magithub))
 
 (dolist (p my-packages)
@@ -129,7 +131,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (slack smartparens aggressive-indent magithub project-explorer undo-tree minimap flx-ido move-text expand-region markdown-mode clj-refactor sayid which-key smex rainbow-mode rainbow-delimiters projectile php-mode magit ido-ubiquitous hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
+    (ido-completing-read+ shm haskell-snippets aggressive-indent magithub project-explorer undo-tree minimap flx-ido move-text expand-region markdown-mode clj-refactor sayid which-key smex rainbow-mode rainbow-delimiters projectile php-mode magit hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
