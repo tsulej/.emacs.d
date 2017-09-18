@@ -58,7 +58,7 @@
 (require 'minimap)
 
 (require 'uniquify)
-(setq uniquify-buffer-name-style 'past-forward-angle-brackets)
+(setq uniquify-buffer-name-style 'post-forward)
 
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
@@ -131,7 +131,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (ido-completing-read+ shm haskell-snippets aggressive-indent magithub project-explorer undo-tree minimap flx-ido move-text expand-region markdown-mode clj-refactor sayid which-key smex rainbow-mode rainbow-delimiters projectile php-mode magit hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
+    (company-lua lua-mode luarocks ido-completing-read+ shm haskell-snippets aggressive-indent magithub project-explorer undo-tree minimap flx-ido move-text expand-region markdown-mode clj-refactor sayid which-key smex rainbow-mode rainbow-delimiters projectile php-mode magit hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
