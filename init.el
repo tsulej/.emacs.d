@@ -31,7 +31,6 @@
     yasnippet
     company
     which-key
-    ido-ubiquitous
     smex
     eldoc-extension
     eldoc-eval
