@@ -94,13 +94,6 @@
 ;; keep track of saved places in ~/.emacs.d/places
 (setq save-place-file (concat user-emacs-directory "places"))
 
-;; Emacs can automatically create backup files. This tells Emacs to
-;; put all backups in ~/.emacs.d/backups. More info:
-;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Backup-Files.html
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                               "backups"))))
-(setq auto-save-default nil)
-
 (setq recentf-save-file (concat user-emacs-directory ".recentf"))
 (require 'recentf)
 (recentf-mode 1)
@@ -116,6 +109,17 @@
 
 ;; full path in title bar
 (setq-default frame-title-format "%b (%f)")
+
+;; Emacs can automatically create backup files. This tells Emacs to
+;; put all backups in ~/.emacs.d/backups. More info:
+;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Backup-Files.html
+(defconst backup-dir (concat user-emacs-directory "backups"))
+(setq backup-directory-alist `(("." . ,backup-dir)))
+(setq auto-save-file-name-transforms `((".*" ,backup-dir t)))
+(setq auto-save-list-file-prefix backup-dir)
+(setq undo-tree-history-directory-alist `((".*" . ,backup-dir)))
+(setq undo-tree-auto-save-history t)
+(setq create-lockfiles nil)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

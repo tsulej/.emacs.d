@@ -2,6 +2,7 @@
 ;; Clojure
 ;;;;
 
+(require 'clojure-mode)
 (require 'cider)
 (require 'clj-refactor)
 
