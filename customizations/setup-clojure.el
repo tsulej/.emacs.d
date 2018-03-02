@@ -19,6 +19,7 @@
 (add-hook 'clojure-mode-hook 'hs-minor-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
+(add-hook 'clojure-mode-hook 'turn-on-iimage-mode)
 
 ;; A little more syntax highlighting
 (require 'clojure-mode-extra-font-locking)
