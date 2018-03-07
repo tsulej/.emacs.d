@@ -84,6 +84,9 @@
 (require 'projectile)
 (projectile-mode 1)
 
+(autoload 'iimage-mode "iimage" "Support Inline image minor mode." t)
+(autoload 'turn-on-iimage-mode "iimage" "Turn on Inline image minor mode." t)
+
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
 ;; When you visit a file, point goes to the last place where it
