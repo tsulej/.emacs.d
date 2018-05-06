@@ -43,21 +43,24 @@
     move-text
     project-explorer
     minimap
+    use-package
     clojure-snippets
-    haskell-snippets
     magithub))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-(require 'project-explorer)
-(global-set-key (kbd "C-x p") 'project-explorer-toggle)
+(require 'use-package)
 
-(require 'minimap)
+(use-package project-explorer
+  :bind (("C-x p" . project-explorer-toggle)))
 
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward)
+(use-package minimap)
+
+(use-package uniquify
+  :init
+  (setq uniquify-buffer-name-style 'post-forward))
 
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
@@ -78,11 +81,13 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
-(require 'yasnippet)
-(yas-global-mode 1)
+(use-package yasnippet
+  :config
+  (yas-global-mode 1))
 
-(require 'projectile)
-(projectile-mode 1)
+(use-package projectile
+  :config
+  (projectile-mode 1))
 
 (autoload 'iimage-mode "iimage" "Support Inline image minor mode." t)
 (autoload 'turn-on-iimage-mode "iimage" "Turn on Inline image minor mode." t)
@@ -92,15 +97,19 @@
 ;; When you visit a file, point goes to the last place where it
 ;; was when you previously visited the same file.
 ;; http://www.emacswiki.org/emacs/SavePlace
-(require 'saveplace)
-(setq-default save-place t)
+(use-package saveplace
+  :init
+  (setq-default save-place t))
 ;; keep track of saved places in ~/.emacs.d/places
 (setq save-place-file (concat user-emacs-directory "places"))
 
 (setq recentf-save-file (concat user-emacs-directory ".recentf"))
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 40)
+
+(use-package recentf
+  :config
+  (recentf-mode 1)
+  :init
+  (setq recentf-max-menu-items 40))
 
 (load "editing.el")
 (load "navigation.el")
@@ -139,7 +148,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (jdee ido-ubiquitous company-lua lua-mode luarocks ido-completing-read+ shm haskell-snippets aggressive-indent magithub project-explorer undo-tree minimap flx-ido move-text expand-region markdown-mode clj-refactor sayid which-key smex rainbow-mode rainbow-delimiters projectile php-mode magit hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
+    (ido-completing-read+ use-package jdee company-lua lua-mode luarocks shm aggressive-indent magithub project-explorer undo-tree minimap flx-ido move-text expand-region markdown-mode clj-refactor sayid which-key smex rainbow-mode rainbow-delimiters projectile php-mode magit hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
