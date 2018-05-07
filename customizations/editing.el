@@ -22,6 +22,7 @@
   "comment or uncomment current line"
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 ;; yay rainbows!
@@ -37,22 +38,23 @@
 
 ;(setq electric-indent-mode nil)
 
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
+(use-package company
+  :hook (after-init-hook . global-company-mode)
+  :config
+  (with-eval-after-load 'company
+    (company-flx-mode +1)))
 
-(with-eval-after-load 'company
-  (company-flx-mode +1))
+(use-package adjust-parens)
 
-(require 'adjust-parens)
+(use-package expand-region
+  :bind ("C-@" . er/expand-region))
 
-(require 'expand-region)
-(global-set-key (kbd "C-@") 'er/expand-region)
-
-(require 'multiple-cursors)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(use-package  multiple-cursors
+  :bind (("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)))
 
 (autoload 'zap-up-to-char "misc"
   "Kill up to, but not including ARGth occurrence of CHAR." t)
+
 (global-set-key (kbd "M-z") 'zap-up-to-char)
