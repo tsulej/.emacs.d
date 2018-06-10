@@ -1,5 +1,12 @@
 ;; https://github.com/flyingmachine/emacs-for-clojure/blob/master/
 
+(require 'cl)
+
+(setq gc-cons-threshold 64000000)
+(add-hook 'after-init-hook (lambda ()
+                             ;; restore after startup
+                             (setq gc-cons-threshold 800000)))
+
 (require 'package) ;; You might already have this line
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -32,7 +39,6 @@
     company
     which-key
     smex
-    eldoc-extension
     eldoc-eval
     expand-region
     ido-completing-read+
@@ -40,11 +46,13 @@
     flx-ido
     clojars
     hideshowvis
+    hlinum
     move-text
     project-explorer
     minimap
     use-package
     clojure-snippets
+    jdee
     magithub))
 
 (dolist (p my-packages)
@@ -135,6 +143,12 @@
 
 (setq auto-window-vscroll nil)
 
+(global-linum-mode 1)
+(setq linum-format " %d ")
+
+(require 'hlinum)
+(hlinum-activate)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -148,7 +162,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (ido-completing-read+ use-package jdee company-lua lua-mode luarocks shm aggressive-indent magithub project-explorer undo-tree minimap flx-ido move-text expand-region markdown-mode clj-refactor sayid which-key smex rainbow-mode rainbow-delimiters projectile php-mode magit hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
+    (hlinum ido-completing-read+ use-package jdee company-lua lua-mode luarocks shm aggressive-indent project-explorer undo-tree minimap flx-ido move-text expand-region clj-refactor sayid smex rainbow-mode rainbow-delimiters php-mode hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces

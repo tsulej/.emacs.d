@@ -38,11 +38,11 @@
 
 ;(setq electric-indent-mode nil)
 
-(use-package company
-  :hook (after-init-hook . global-company-mode)
-  :config
-  (with-eval-after-load 'company
-    (company-flx-mode +1)))
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(with-eval-after-load 'company
+  (company-flx-mode +1))
 
 (use-package adjust-parens)
 
