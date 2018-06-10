@@ -2,16 +2,16 @@
 ;; Clojure
 ;;;;
 
-(use-package clojure-mode)
-(use-package cider)
-(use-package clj-refactor)
+(require 'clojure-mode)
+(require 'cider)
+(require 'clj-refactor)
 
 (defun my-clojure-mode-hook ()
   (clj-refactor-mode 1)
   ;; This choice of keybinding leaves cider-macroexpand-1 unbound
   (cljr-add-keybindings-with-prefix "C-c C-m"))
 
-(use-package paredit)
+(require 'paredit)
 
 (add-hook 'clojure-mode-hook 'my-clojure-mode-hook)
 (add-hook 'clojure-mode-hook 'subword-mode)
