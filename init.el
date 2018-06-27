@@ -162,7 +162,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (hlinum ido-completing-read+ use-package jdee company-lua lua-mode luarocks shm aggressive-indent project-explorer undo-tree minimap flx-ido move-text expand-region clj-refactor sayid smex rainbow-mode rainbow-delimiters php-mode hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
+    (which-key hlinum ido-completing-read+ use-package jdee company-lua lua-mode luarocks shm aggressive-indent project-explorer undo-tree minimap flx-ido move-text expand-region clj-refactor sayid smex rainbow-mode rainbow-delimiters php-mode hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
