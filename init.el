@@ -55,6 +55,7 @@
     jdee
     js2-mode
     js2-refactor
+    js-comint
     magithub))
 
 (dolist (p my-packages)
@@ -163,9 +164,6 @@
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(frame-background-mode (quote dark))
- '(package-selected-packages
-   (quote
-    (js2-mode js2-refactor js-comint hlinum ido-completing-read+ use-package jdee company-lua lua-mode luarocks shm aggressive-indent project-explorer undo-tree minimap flx-ido move-text expand-region clj-refactor sayid smex rainbow-mode rainbow-delimiters php-mode hideshowvis eldoc-extension eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojure-cheatsheet clojars cider-eval-sexp-fu auto-complete adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
