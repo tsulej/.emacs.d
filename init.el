@@ -20,7 +20,8 @@
     (package-refresh-contents))
 
 (defvar my-packages
-  '(adjust-parens
+  '(anzu
+    adjust-parens
     aggressive-indent
     auto-complete
     clojure-mode
@@ -56,7 +57,11 @@
     js2-mode
     js2-refactor
     js-comint
-    magithub))
+    magithub
+    doom-themes
+    all-the-icons
+    doom-modeline
+    minions))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -153,17 +158,33 @@
 (require 'hlinum)
 (hlinum-activate)
 
+(require 'minions)
+(minions-mode 1)
+
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+
+(setq doom-modeline-buffer-file-name-style 'truncate-all)
+(setq doom-modeline-minor-modes t)
+(setq doom-modeline-github t)
+(setq doom-modeline-height 20)
+
+(require 'anzu)
+(global-anzu-mode +1)
+
+(global-prettify-symbols-mode +1)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
  '(custom-enabled-themes (quote (deeper-blue)))
- '(custom-safe-themes
-   (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(frame-background-mode (quote dark))
+ '(package-selected-packages
+   (quote
+    (tabbar anzu minions which-key use-package smex rainbow-mode rainbow-delimiters projectile project-explorer move-text minimap magithub js2-refactor js-comint jdee ido-completing-read+ hlinum hideshowvis flx-ido expand-region doom-themes doom-modeline company-flx clojure-snippets clojure-mode-extra-font-locking clojars clj-refactor cider-eval-sexp-fu auto-complete aggressive-indent adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
