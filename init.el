@@ -164,6 +164,9 @@
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(frame-background-mode (quote dark))
+ '(package-selected-packages
+   (quote
+    (which-key use-package smex rainbow-mode rainbow-delimiters projectile project-explorer move-text minimap magithub js2-refactor js-comint jdee ido-completing-read+ hlinum hideshowvis ggtags flx-ido expand-region eldoc-eval company-flx clojure-snippets clojure-mode-extra-font-locking clojars clj-refactor cider-eval-sexp-fu auto-complete aggressive-indent adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
