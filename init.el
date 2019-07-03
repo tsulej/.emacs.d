@@ -24,11 +24,11 @@
     adjust-parens
     aggressive-indent
     auto-complete
+    clj-refactor
     clojure-mode
     clojure-mode-extra-font-locking
     cider
     cider-eval-sexp-fu
-    clj-refactor
     paredit
     projectile
     rainbow-mode
@@ -182,6 +182,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (deeper-blue)))
  '(frame-background-mode (quote dark))
+ '(package-selected-packages
+   (quote
+    (js2-mode eldoc-eval company magit markdown-mode cider clojure-mode which-key use-package smex rainbow-mode rainbow-delimiters projectile project-explorer move-text minions minimap magithub magit-popup js2-refactor js-comint jdee ido-completing-read+ hlinum hideshowvis flx-ido expand-region doom-themes doom-modeline company-flx clojure-snippets clojure-mode-extra-font-locking clojars clj-refactor cider-eval-sexp-fu auto-complete anzu aggressive-indent adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
