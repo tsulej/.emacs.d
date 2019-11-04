@@ -29,6 +29,7 @@
     clojure-mode-extra-font-locking
     cider
     cider-eval-sexp-fu
+    ess
     paredit
     projectile
     rainbow-mode
@@ -61,6 +62,7 @@
     doom-themes
     all-the-icons
     doom-modeline
+    flycheck-clj-kondo
     minions))
 
 (dolist (p my-packages)
@@ -174,6 +176,7 @@
 
 (global-prettify-symbols-mode +1)
 
+(require 'ess-r-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -181,10 +184,24 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (deeper-blue)))
+ '(ess-R-font-lock-keywords
+   (quote
+    ((ess-R-fl-keyword:keywords . t)
+     (ess-R-fl-keyword:constants . t)
+     (ess-R-fl-keyword:modifiers . t)
+     (ess-R-fl-keyword:fun-defs . t)
+     (ess-R-fl-keyword:assign-ops . t)
+     (ess-R-fl-keyword:%op% . t)
+     (ess-fl-keyword:fun-calls . t)
+     (ess-fl-keyword:numbers . t)
+     (ess-fl-keyword:operators . t)
+     (ess-fl-keyword:delimiters . t)
+     (ess-fl-keyword:= . t)
+     (ess-R-fl-keyword:F&T . t))))
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (js2-mode eldoc-eval company magit markdown-mode cider clojure-mode which-key use-package smex rainbow-mode rainbow-delimiters projectile project-explorer move-text minions minimap magithub magit-popup js2-refactor js-comint jdee ido-completing-read+ hlinum hideshowvis flx-ido expand-region doom-themes doom-modeline company-flx clojure-snippets clojure-mode-extra-font-locking clojars clj-refactor cider-eval-sexp-fu auto-complete anzu aggressive-indent adjust-parens)))
+    (flycheck-clj-kondo ess js2-mode eldoc-eval company magit markdown-mode cider clojure-mode which-key use-package smex rainbow-mode rainbow-delimiters projectile project-explorer move-text minions minimap magithub magit-popup js2-refactor js-comint jdee ido-completing-read+ hlinum hideshowvis flx-ido expand-region doom-themes doom-modeline company-flx clojure-snippets clojure-mode-extra-font-locking clojars clj-refactor cider-eval-sexp-fu auto-complete anzu aggressive-indent adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
