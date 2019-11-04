@@ -5,6 +5,17 @@
 (require 'clojure-mode)
 (require 'cider)
 (require 'clj-refactor)
+(require 'flycheck-clj-kondo)
+
+(use-package flycheck-clj-kondo
+  :ensure t)
+
+(use-package clojure-mode
+  :ensure t
+  :config
+  (require 'flycheck-clj-kondo))
+
+(flycheck-clj-kondo-define-checkers "--config" "/home/tsulej/.emacs.d/clj-kondo-config.edn")
 
 (defun my-clojure-mode-hook ()
   (clj-refactor-mode 1)

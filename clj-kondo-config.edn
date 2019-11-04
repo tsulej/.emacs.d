@@ -1,0 +1,2 @@
+{:linters {:invalid-arity {:skip-args [clojure2d.core/with-canvas->
+                                       clojure2d.core/with-canvas]}}}
