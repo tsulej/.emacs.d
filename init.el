@@ -29,6 +29,7 @@
     clojure-mode-extra-font-locking
     cider
     cider-eval-sexp-fu
+    ess
     paredit
     projectile
     rainbow-mode
@@ -174,6 +175,7 @@
 
 (global-prettify-symbols-mode +1)
 
+(require 'ess-r-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -184,7 +186,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (js2-mode eldoc-eval company magit markdown-mode cider clojure-mode which-key use-package smex rainbow-mode rainbow-delimiters projectile project-explorer move-text minions minimap magithub magit-popup js2-refactor js-comint jdee ido-completing-read+ hlinum hideshowvis flx-ido expand-region doom-themes doom-modeline company-flx clojure-snippets clojure-mode-extra-font-locking clojars clj-refactor cider-eval-sexp-fu auto-complete anzu aggressive-indent adjust-parens)))
+    (ess js2-mode eldoc-eval company magit markdown-mode cider clojure-mode which-key use-package smex rainbow-mode rainbow-delimiters projectile project-explorer move-text minions minimap magithub magit-popup js2-refactor js-comint jdee ido-completing-read+ hlinum hideshowvis flx-ido expand-region doom-themes doom-modeline company-flx clojure-snippets clojure-mode-extra-font-locking clojars clj-refactor cider-eval-sexp-fu auto-complete anzu aggressive-indent adjust-parens)))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
