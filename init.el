@@ -24,6 +24,7 @@
     adjust-parens
     aggressive-indent
     auto-complete
+    ace-window
     clj-refactor
     clojure-mode
     clojure-mode-extra-font-locking
@@ -31,6 +32,7 @@
     cider-eval-sexp-fu
     ess
     paredit
+    paradox
     projectile
     rainbow-mode
     rainbow-delimiters
@@ -107,10 +109,17 @@
   :config
   (projectile-mode 1))
 
+(use-package ace-window)
+(global-set-key (kbd "M-]") 'ace-window)
+
+(use-package paradox)
+(paradox-enable)
+
 (autoload 'iimage-mode "iimage" "Support Inline image minor mode." t)
 (autoload 'turn-on-iimage-mode "iimage" "Turn on Inline image minor mode." t)
 
 (add-to-list 'load-path "~/.emacs.d/customizations")
+(add-to-list 'load-path "~/.emacs.d/emacs-vega-view")
 
 ;; When you visit a file, point goes to the last place where it
 ;; was when you previously visited the same file.
@@ -133,6 +142,10 @@
 (load "navigation.el")
 (load "setup-clojure.el")
 (load "setup-js.el")
+(load "vega-view.el")
+
+(setq vega-view-prefer-png t)
+(global-set-key (kbd "C-c C-v") 'vega-view)
 
 ;; Don't show native OS scroll bars for buffers because they're redundant
 (when (fboundp 'scroll-bar-mode)
@@ -201,7 +214,8 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (flycheck-clj-kondo ess js2-mode eldoc-eval company magit markdown-mode cider clojure-mode which-key use-package smex rainbow-mode rainbow-delimiters projectile project-explorer move-text minions minimap magithub magit-popup js2-refactor js-comint jdee ido-completing-read+ hlinum hideshowvis flx-ido expand-region doom-themes doom-modeline company-flx clojure-snippets clojure-mode-extra-font-locking clojars clj-refactor cider-eval-sexp-fu auto-complete anzu aggressive-indent adjust-parens)))
+    (json-mode paradox ace-window flycheck-clj-kondo ess js2-mode eldoc-eval company magit markdown-mode cider clojure-mode which-key use-package smex rainbow-mode rainbow-delimiters projectile project-explorer move-text minions minimap magithub magit-popup js2-refactor js-comint jdee ido-completing-read+ hlinum hideshowvis flx-ido expand-region doom-themes doom-modeline company-flx clojure-snippets clojure-mode-extra-font-locking clojars clj-refactor cider-eval-sexp-fu auto-complete anzu aggressive-indent adjust-parens)))
+ '(paradox-github-token t)
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
